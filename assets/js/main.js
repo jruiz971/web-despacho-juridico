@@ -8,10 +8,10 @@
   "use strict";
 
   /** Numero de WhatsApp en formato internacional, sin signos. */
-  const WHATSAPP = "524434831005";
+  const WHATSAPP = "524433056267";
 
   /** Correo al que se envia el formulario cuando el visitante elige correo. */
-  const CORREO_CONTACTO = "contreras_y_asociados@outlook.com";
+  const CORREO_CONTACTO = "contrerasyasociados1@icloud.com";
 
   const prefiereMenosMovimiento = window.matchMedia(
     "(prefers-reduced-motion: reduce)"

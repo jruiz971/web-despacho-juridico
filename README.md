@@ -74,11 +74,26 @@ confirmarlos antes de cada generación**.
 
 ### Teléfonos, correos y dirección
 
-Aparecen en la barra superior y en el pie de página de las siete páginas, y
-completos en `contacto.html`. Al cambiar un número hay que buscarlo y
-reemplazarlo en todos los archivos (`443 483 1005` aparece además como
-`524434831005` en los enlaces de WhatsApp, y el contador de la portada de
-`index.html` indica cuántas líneas se publican).
+Datos vigentes:
+
+| Línea | Número | Dónde aparece |
+|---|---|---|
+| Oficina 1 | 443 970 2832 | Barra superior, pie de página, contacto |
+| Oficina 2 | 443 902 3981 | Pie de página, contacto |
+| WhatsApp 1 | 443 305 6267 | Botón flotante, formulario, pie, contacto |
+| WhatsApp 2 | 443 185 4257 | Pie de página, contacto |
+| Médico Legal (MLGM) | 237 130 2362 | Barra superior de `medico-legal.html`, pie, contacto |
+| CAE | 443 924 2422 | Barra superior de `cae.html`, pie, contacto |
+| Correo | contrerasyasociados1@icloud.com | Todas las páginas |
+| Facebook | facebook.com/profile.php?id=61590984252569 | Pie de página, contacto |
+| X | x.com/Contyasoc1 | Pie de página, contacto |
+
+Al cambiar un número hay que reemplazarlo en todos los archivos. Ojo con los
+dos formatos: el visible (`443 305 6267`) y el de enlace
+(`tel:+524433056267`, `wa.me/524433056267`). El WhatsApp principal está además
+en `assets/js/main.js`, en la constante `WHATSAPP`, y el correo en
+`CORREO_CONTACTO`. El contador de la portada de `index.html` indica cuántas
+líneas se publican y hay que ajustarlo si cambia el total.
 
 ### Colores y tipografías
 
@@ -122,14 +137,34 @@ página, que hoy apuntan a la URL de GitHub Pages.
 | Fotografías reales de la oficina y del equipo | `assets/img/` |
 | Nombres, cargos y semblanzas del organigrama | `assets/js/equipo.js` |
 | Horario real de atención | `contacto.html`, bloque marcado con `TODO` |
-| Quinta línea telefónica, si se publica | `contacto.html` e `index.html` |
 | Confirmar fechas y costos vigentes de los cursos | `cae.html` |
+| Resolver a qué dominio debe apuntar el sitio (ver abajo) | `CNAME` y etiquetas `canonical` |
 | Revisión del contenido de la división MLGM por la dirección | `medico-legal.html` |
 | Revisión y aprobación del aviso de privacidad | `aviso-de-privacidad.html` |
 
+## Pendiente por resolver: el dominio contrerasyasociados.com
+
+La página de Facebook del despacho declara como sitio web
+`http://contrerasyasociados.com/`. Ese dominio **ya está registrado y en
+línea**: responde con un WordPress alojado en LiteSpeed cuyo título es
+*«Contreras y Mego – Asociados»*, un nombre distinto al del despacho.
+
+Antes de contratar o apuntar cualquier dominio hay que aclarar con la dirección
+si ese sitio es suyo, si pertenece a una firma relacionada, o si la ficha de
+Facebook está apuntando a un tercero. De ello depende:
+
+- si este sitio debe publicarse en ese mismo dominio o en otro,
+- qué se hace con el contenido que ya vive ahí,
+- y a dónde deben apuntar las etiquetas `canonical`, que hoy señalan la
+  dirección de GitHub Pages.
+
 ## Fuentes de la información publicada
 
-Los datos de contacto, las áreas de práctica y la información de los cursos se
-tomaron de la [página de Facebook del despacho](https://www.facebook.com/ContrerasyAsociadosoficial)
+Los datos de contacto vigentes provienen de la
+[página de Facebook actual del despacho](https://www.facebook.com/profile.php?id=61590984252569),
+más las líneas por división proporcionadas directamente por el cliente.
+
+Las áreas de práctica y la información de los cursos se tomaron de la
+[página de Facebook anterior](https://www.facebook.com/ContrerasyAsociadosoficial)
 y de las imágenes de sus convocatorias. No debe confundirse con el despacho
 homónimo de la Ciudad de México (`crca.com.mx`), que no tiene relación con éste.
