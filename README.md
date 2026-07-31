@@ -101,19 +101,13 @@ Si más adelante se quiere recibir los mensajes por correo automáticamente, la
 vía más simple es dar de alta el formulario en un servicio como Formspree y
 cambiar el `action` del `<form>`.
 
-## Publicar en GitHub Pages
+## Publicación
 
-1. En el repositorio, **Settings → Pages**.
-2. En *Source*, elegir `Deploy from a branch`.
-3. Rama `main`, carpeta `/ (root)`. Guardar.
+El sitio está en línea en **<https://jruiz971.github.io/web-despacho-juridico/>**.
 
-En un par de minutos queda en
-`https://jruiz971.github.io/web-despacho-juridico/`.
-
-> El repositorio es privado. GitHub Pages en repositorios privados requiere
-> plan de pago; si se quiere publicar gratis, hay que hacerlo público o usar
-> Netlify / Cloudflare Pages, que sí sirven sitios estáticos desde repositorios
-> privados sin costo.
+Se sirve con GitHub Pages desde la rama `main`, carpeta raíz (*Settings →
+Pages*). Cada `git push` a `main` vuelve a desplegar el sitio en un par de
+minutos; no hay nada que ejecutar a mano.
 
 Cuando exista un dominio propio (por ejemplo `contrerasyasociados.mx`), se
 agrega un archivo `CNAME` con el dominio y se apunta el DNS a GitHub Pages. En
