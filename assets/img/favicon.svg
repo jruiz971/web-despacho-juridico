@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="C&amp;A">
+  <rect width="64" height="64" rx="10" fill="#0f2540"/>
+  <g fill="#c9a227">
+    <rect x="16" y="17" width="32" height="4.5" rx="1"/>
+    <path d="M20 21.5h24l-2.5 4.5H22.5z"/>
+    <rect x="24" y="26" width="4" height="17" rx="2"/>
+    <rect x="30" y="26" width="4" height="17" rx="2"/>
+    <rect x="36" y="26" width="4" height="17" rx="2"/>
+    <path d="M22.5 44h19l2.5 4.5H20z"/>
+    <rect x="16" y="48.5" width="32" height="4.5" rx="1"/>
+  </g>
+</svg>

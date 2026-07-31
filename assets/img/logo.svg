@@ -1,0 +1,41 @@
+<!--
+  Emblema provisional: columna clasica dentro de un anillo dorado.
+  Sustituir por el logotipo oficial del despacho conservando el nombre de archivo.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img"
+     aria-label="Emblema de Contreras y Asociados">
+  <defs>
+    <linearGradient id="oro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dcbc55"/>
+      <stop offset="55%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a8851d"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="60" cy="60" r="56" fill="none" stroke="url(#oro)" stroke-width="2.5"/>
+  <circle cx="60" cy="60" r="49" fill="none" stroke="url(#oro)" stroke-width="1"
+          opacity="0.55"/>
+
+  <!-- Tres estrellas sobre el capitel -->
+  <g fill="url(#oro)">
+    <path d="M43 26.5l1.5 3.3 3.6.4-2.7 2.4.8 3.5-3.2-1.8-3.2 1.8.8-3.5-2.7-2.4 3.6-.4z"/>
+    <path d="M60 23l1.7 3.7 4 .5-3 2.7.9 3.9L60 31.8l-3.6 2 .9-3.9-3-2.7 4-.5z"/>
+    <path d="M77 26.5l1.5 3.3 3.6.4-2.7 2.4.8 3.5-3.2-1.8-3.2 1.8.8-3.5-2.7-2.4 3.6-.4z"/>
+  </g>
+
+  <!-- Abaco y capitel -->
+  <rect x="33" y="41" width="54" height="6" rx="1" fill="url(#oro)"/>
+  <path d="M38 47h44l-3.5 6H41.5z" fill="url(#oro)"/>
+
+  <!-- Fuste estriado -->
+  <g fill="url(#oro)">
+    <rect x="44" y="54" width="4.5" height="30" rx="2"/>
+    <rect x="52.5" y="54" width="4.5" height="30" rx="2"/>
+    <rect x="61" y="54" width="4.5" height="30" rx="2"/>
+    <rect x="69.5" y="54" width="4.5" height="30" rx="2"/>
+  </g>
+
+  <!-- Basa y plinto -->
+  <path d="M41.5 85h37l3.5 6H38z" fill="url(#oro)"/>
+  <rect x="33" y="91" width="54" height="7" rx="1" fill="url(#oro)"/>
+</svg>
