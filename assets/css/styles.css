@@ -1201,6 +1201,99 @@ textarea:focus-visible {
   overflow: hidden;
 }
 
+/* Pasos numerados del proceso de consulta */
+.pasos-consulta {
+  background: var(--marfil);
+  border: 1px solid var(--gris-borde);
+  border-top: 4px solid var(--azul-800);
+  border-radius: var(--radio);
+  padding: 2.25rem;
+}
+
+.lista-pasos {
+  list-style: none;
+  counter-reset: paso;
+  padding: 0;
+  margin: 0 0 1.75rem;
+}
+
+.lista-pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding-left: 3.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.lista-pasos li:last-child {
+  padding-bottom: 0;
+}
+
+/* Circulo con el numero del paso */
+.lista-pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--azul-800);
+  color: var(--oro-400);
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Linea vertical que enlaza un paso con el siguiente */
+.lista-pasos li::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 44px;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--gris-borde);
+}
+
+.lista-pasos li:last-child::after {
+  display: none;
+}
+
+.lista-pasos h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.25rem;
+  padding-top: 0.35rem;
+}
+
+.lista-pasos p {
+  margin-bottom: 0;
+  font-size: 0.97rem;
+}
+
+@media (max-width: 575.98px) {
+  .pasos-consulta {
+    padding: 1.5rem;
+  }
+
+  .lista-pasos li {
+    padding-left: 3rem;
+  }
+
+  .lista-pasos li::before {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .lista-pasos li::after {
+    left: 15px;
+    top: 38px;
+  }
+}
+
 /* -------------------------------------------------------------------------
    16. Aviso legal destacado
    ------------------------------------------------------------------------- */
