@@ -948,6 +948,15 @@ textarea:focus-visible {
   box-shadow: var(--sombra-media);
 }
 
+/* Toda la tarjeta abre el perfil, no solo el boton */
+.persona--con-perfil {
+  cursor: pointer;
+}
+
+.persona--con-perfil:hover .persona-nombre {
+  color: var(--oro-600);
+}
+
 /* Nivel con varias ramas: cada tarjeta va dentro de una celda de igual ancho.
    La celda dibuja su tramo de barra horizontal y su bajada vertical, de modo
    que las lineas caen siempre sobre el centro de la tarjeta sin importar
