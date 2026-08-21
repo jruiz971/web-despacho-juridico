@@ -39,8 +39,7 @@ const DIRECTOR = {
   nombre: "Israel Contreras Galindo",
   cargo: "Director general",
   area: "Dirección del despacho",
-  // TODO: falta el retrato. Guardarlo como assets/img/equipo/israel-contreras-galindo.jpg
-  foto: "",
+  foto: "assets/img/equipo/israel-contreras-galindo.jpg",
   cedula: "08758086 (federal) y 12311899, en trámite",
   formacion:
     "Licenciado en Derecho y Ciencias Sociales. Maestría en Educación y maestría en Derecho Procesal Penal. Doctorado en Educación.",
@@ -139,9 +138,8 @@ const EQUIPO = {
       pendiente: false,
     },
     {
-      // Perfil contable, no juridico: por eso el cargo no dice "juridico".
       nombre: "José Alberto Antonio Cabrera",
-      cargo: "Asociado administrativo",
+      cargo: "Asociado jurídico",
       area: "Contabilidad y archivo",
       foto: "assets/img/equipo/jose-alberto-antonio-cabrera.jpg",
       cedula: "",
