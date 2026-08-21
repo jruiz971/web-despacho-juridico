@@ -231,12 +231,6 @@
           <hr class="regla-oro mx-auto mt-3">
         </div>
         <div class="row g-4 justify-content-center revelar" data-asociados></div>
-
-        <p class="text-center mt-5 mb-0 nota-privacidad">
-          <i class="bi bi-info-circle me-1"></i>
-          Las tarjetas marcadas como <em>por asignar</em> se completan conforme se
-          confirma la información profesional de cada integrante.
-        </p>
       </div>
     </section>
 
@@ -264,25 +258,31 @@
 
   <!-- ===================== Modal de perfil ===================== -->
   <div class="modal fade" id="modalPerfil" tabindex="-1" aria-labelledby="tituloPerfil" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title h4" id="tituloPerfil" data-modal-nombre>Perfil</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+
+        <!-- Cabecera: retrato, nombre, cargo y credenciales -->
+        <div class="perfil-cabecera">
+          <button type="button" class="btn-close btn-close-white perfil-cerrar"
+                  data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div data-modal-foto></div>
+          <h2 class="modal-title" id="tituloPerfil" data-modal-nombre>Perfil</h2>
+          <p class="perfil-cargo" data-modal-cargo></p>
+          <p class="perfil-area" data-modal-area></p>
+          <p class="perfil-cedula" data-modal-cedula hidden></p>
         </div>
+
         <div class="modal-body">
-          <div class="row g-4">
-            <div class="col-sm-4 text-center" data-modal-foto></div>
-            <div class="col-sm-8">
-              <p class="persona-cargo mb-1" data-modal-cargo></p>
-              <p class="mb-2" data-modal-area></p>
-              <p class="mb-1 small" data-modal-formacion hidden></p>
-              <p class="mb-3 small texto-azul" data-modal-cedula hidden></p>
-              <div data-modal-perfil></div>
-              <a class="d-inline-block mt-2" href="#" data-modal-correo hidden></a>
-            </div>
-          </div>
+          <div data-modal-perfil class="perfil-semblanza"></div>
+
+          <p class="perfil-formacion" data-modal-formacion hidden></p>
+
+          <!-- Secciones desplegables; se construyen desde equipo.js -->
+          <div class="accordion perfil-secciones" id="perfilSecciones" data-modal-secciones></div>
+
+          <a class="d-inline-block mt-3" href="#" data-modal-correo hidden></a>
         </div>
+
         <div class="modal-footer">
           <a class="btn btn-oro" href="contacto.html#formulario">Agendar una consulta</a>
         </div>
@@ -361,6 +361,7 @@
             <li><i class="bi bi-heart-pulse texto-oro me-2"></i>MLGM <a href="tel:+522371302362">237 130 2362</a></li>
             <li><i class="bi bi-mortarboard texto-oro me-2"></i>CAE <a href="tel:+524439242422">443 924 2422</a></li>
             <li><i class="bi bi-envelope texto-oro me-2"></i><a href="mailto:contrerasyasociados1@icloud.com">contrerasyasociados1@icloud.com</a></li>
+            <li class="mt-3"><i class="bi bi-clock-fill texto-oro me-2"></i><strong class="text-white">Atención las 24 horas, los 7 días</strong></li>
           </ul>
         </div>
       </div>

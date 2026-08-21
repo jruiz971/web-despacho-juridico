@@ -1091,6 +1091,127 @@ textarea:focus-visible {
   }
 }
 
+/* Ventana de perfil del organigrama */
+.perfil-cabecera {
+  position: relative;
+  padding: 2.5rem 2rem 1.75rem;
+  text-align: center;
+  background: linear-gradient(140deg, var(--azul-900), var(--azul-700));
+  color: rgba(255, 255, 255, 0.82);
+  border-radius: calc(var(--radio) - 1px) calc(var(--radio) - 1px) 0 0;
+}
+
+.perfil-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.7;
+}
+
+.perfil-cerrar:hover {
+  opacity: 1;
+}
+
+.perfil-cabecera .persona-foto {
+  width: 128px;
+  height: 128px;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px var(--oro-500);
+  margin-bottom: 1.15rem;
+}
+
+.perfil-cabecera .modal-title {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blanco);
+  margin-bottom: 0.4rem;
+}
+
+.perfil-cargo {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--oro-400);
+  margin-bottom: 0.35rem;
+}
+
+.perfil-area {
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
+.perfil-cedula {
+  display: inline-block;
+  margin: 1rem 0 0;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid rgba(220, 188, 85, 0.45);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--oro-400);
+}
+
+.modal-content:has(.perfil-cabecera) {
+  border: 0;
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+.perfil-semblanza p {
+  margin-bottom: 0.9rem;
+}
+
+.perfil-semblanza p:last-child {
+  margin-bottom: 0;
+}
+
+.perfil-formacion {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--marfil);
+  border-left: 3px solid var(--oro-500);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  font-size: 0.95rem;
+}
+
+.perfil-secciones {
+  margin-top: 1.75rem;
+}
+
+.perfil-secciones:empty {
+  margin-top: 0;
+}
+
+.perfil-secciones .accordion-button {
+  font-size: 1rem;
+  padding: 0.95rem 1.15rem;
+}
+
+.perfil-secciones .accordion-body {
+  padding: 0 1.15rem 1.15rem;
+}
+
+.perfil-secciones .lista-marcada li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 575.98px) {
+  .perfil-cabecera {
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .perfil-cabecera .persona-foto {
+    width: 104px;
+    height: 104px;
+  }
+
+  .perfil-cabecera .modal-title {
+    font-size: 1.35rem;
+  }
+}
+
 /* -------------------------------------------------------------------------
    15. Contacto
    ------------------------------------------------------------------------- */

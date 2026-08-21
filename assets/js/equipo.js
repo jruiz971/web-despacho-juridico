@@ -11,12 +11,15 @@
      foto        Ruta de la fotografia, por ejemplo "assets/img/equipo/ana.jpg".
                  Si se deja vacia se muestran las iniciales sobre fondo azul.
      cedula      Numero de cedula profesional. Vacio si no aplica.
-     formacion   Titulo academico y universidad.
-     perfil      Uno o dos parrafos de semblanza (arreglo de textos).
+     formacion   Resumen academico de una linea. Vacio si va en secciones.
+     perfil      Semblanza de entrada (arreglo de parrafos), siempre visible.
+     secciones   Bloques desplegables del perfil. Cada uno es
+                 { titulo: "...", items: ["...", "..."] }. Se omite el campo
+                 cuando no hay material suficiente: mas vale un perfil corto
+                 que uno relleno de generalidades.
      correo      Correo de contacto directo. Vacio si no se publica.
      pendiente   true mientras no se tengan los datos: la tarjeta se dibuja en
-                 gris punteado con la leyenda "Por asignar". Poner en false o
-                 borrar la linea cuando se complete la informacion.
+                 gris punteado y no abre perfil.
 
    ESTRUCTURA
    El despacho tiene un director y el resto del equipo como asociados. Bajo la
@@ -33,20 +36,84 @@
    dominio propio, nunca cuentas personales de Gmail o Hotmail.
    ========================================================================= */
 
-/* Datos del director. Se reutilizan mas abajo para la coordinacion del CAE,
-   que tambien esta a su cargo. */
+/* Secciones del director que se reutilizan en su ficha del CAE. */
+const FORMACION_DIRECTOR = {
+  titulo: "Formación académica",
+  items: [
+    "Doctorado en Educación.",
+    "Maestría en Derecho Procesal Penal.",
+    "Maestría en Educación, 2019.",
+    "Licenciatura en Derecho y Ciencias Sociales.",
+    "Cursos de inglés y de francés, de 125 horas cada uno, en el Departamento de Idiomas de la Universidad Michoacana de San Nicolás de Hidalgo.",
+  ],
+};
+
+const DOCENCIA_DIRECTOR = {
+  titulo: "Docencia universitaria",
+  items: [
+    "Universidad Interamericana para el Desarrollo: Práctica Procesal Penal, Práctica Procesal Civil, Código Penal, Derecho Mercantil y Derechos de Autor.",
+    "ICESM: Derecho Procesal Penal e Introducción al Estudio del Derecho en la licenciatura en Derecho.",
+    "ICESM: Crimen Organizado en la licenciatura en Criminología.",
+    "ICESM: Doctrinas Económicas y Normas y Legislación Sanitaria.",
+  ],
+};
+
+const FORMACION_SERVIDORES = {
+  titulo: "Formación de servidores públicos",
+  items: [
+    "Tronco común en el curso de formación inicial para Agentes de la Policía Ministerial Acreditable, 140 horas, 2013.",
+    "Estudio Monográfico del Delito en la formación inicial de la Policía Ministerial del fuero común, 55 horas, 2013.",
+    "Teoría del Delito en la formación inicial de Agentes del Ministerio Público del fuero común, 40 horas, 2013.",
+    "Curso sobre la labor del perito en el sistema judicial, 2023.",
+    "Curso del nuevo sistema de justicia penal, 2023.",
+  ],
+};
+
+const SISTEMA_ACUSATORIO = {
+  titulo: "Sistema penal acusatorio",
+  items: [
+    "Formador de Formadores en Justicia Oral Penal en México, con simulación de juicios orales, 40 horas. Agencia Española de Cooperación Internacional para el Desarrollo y Comisión Nacional de Tribunales Superiores de Justicia, 2011.",
+    "Curso regional sobre el nuevo sistema penal acusatorio y oral, 2012.",
+    "Introducción al Nuevo Sistema de Justicia Penal, Procuraduría General de Justicia del Estado de Michoacán, 2013.",
+    "Curso de Escribientes del Consejo del Poder Judicial del Estado de Michoacán, 180 horas, 2009.",
+  ],
+};
+
 const DIRECTOR = {
   nombre: "Israel Contreras Galindo",
   cargo: "Director general",
   area: "Dirección del despacho",
   foto: "assets/img/equipo/israel-contreras-galindo.jpg",
   cedula: "08758086 (federal) y 12311899, en trámite",
-  formacion:
-    "Licenciado en Derecho y Ciencias Sociales. Maestría en Educación y maestría en Derecho Procesal Penal. Doctorado en Educación.",
+  formacion: "",
   perfil: [
-    "Fundador y director del despacho. Atiende asuntos en materia familiar, corporativa y empresarial, bienes muebles e inmuebles en sus vertientes civil, penal y agraria, asistencia en materia penal, y trámites, gestoría y postulancia.",
-    "Abogado litigante y docente. Ha impartido cátedra de Derecho Procesal Penal, Práctica Procesal Civil, Derecho Mercantil y Criminología en la Universidad Interamericana para el Desarrollo y en el ICESM.",
-    "Formador de agentes del Ministerio Público y de la Policía Ministerial en los cursos de formación inicial del estado, y participante en la implementación del sistema penal acusatorio y oral en Michoacán desde sus primeras etapas.",
+    "Fundador y director del despacho. Abogado litigante y docente, con más de veinte años de ejercicio en Michoacán.",
+    "Participó en la implementación del sistema penal acusatorio y oral en el estado desde sus primeras etapas, y ha formado a agentes del Ministerio Público y de la Policía Ministerial en los cursos de formación inicial.",
+  ],
+  secciones: [
+    {
+      titulo: "Áreas de práctica",
+      items: [
+        "Derecho familiar.",
+        "Corporativo y empresarial.",
+        "Bienes muebles e inmuebles, en sus vertientes civil, penal y agraria.",
+        "Asistencia y representación en materia penal.",
+        "Trámites, gestoría y postulancia.",
+      ],
+    },
+    FORMACION_DIRECTOR,
+    DOCENCIA_DIRECTOR,
+    FORMACION_SERVIDORES,
+    SISTEMA_ACUSATORIO,
+    {
+      titulo: "Reconocimientos",
+      items: [
+        "Mención honorífica de la CEIG por el trabajo «La urgencia de emitir la ley reglamentaria del artículo 6 de la Constitución», 2011.",
+        "Mención honorífica del IEAIP por el ensayo «Niveles de seguridad de los datos personales», 2011.",
+        "Reconocimiento en el Segundo Concurso de Ensayo sobre el papel del Canal del Congreso.",
+        "Participación en el Sexto Premio Regional de Ensayo sobre Transparencia, Acceso a la Información y Protección de Datos Personales, COMAIP, 2012.",
+      ],
+    },
   ],
   correo: "",
   pendiente: false,
@@ -63,12 +130,47 @@ const EQUIPO = {
       area: "MLGM · Médico Legal Graco México",
       foto: "assets/img/equipo/yara-mayte-merlan-flores.jpg",
       cedula: "",
-      formacion:
-        "Licenciada en Derecho por la Facultad de Derecho y Ciencias Sociales de la Universidad Michoacana de San Nicolás de Hidalgo. Titulada con cédula profesional.",
+      formacion: "",
       perfil: [
         "Responsable de la división médico legal del despacho, que representa y asesora a médicos, clínicas y hospitales.",
-        "Atiende además asuntos en materia civil, familiar, laboral y penal: elaboración de escritos, gestoría ante dependencias, seguimiento de acuerdos y consulta de autos en línea.",
-        "Antes de dedicarse de lleno al litigio fue representante sindical durante casi nueve años, mediando conflictos entre empresa y trabajadores, experiencia que aporta al área laboral del despacho.",
+        "Atiende además asuntos en materia civil, familiar, laboral y penal, desde la asesoría inicial hasta el seguimiento del juicio.",
+      ],
+      secciones: [
+        {
+          titulo: "Áreas de práctica",
+          items: [
+            "Médico legal.",
+            "Derecho civil.",
+            "Derecho familiar.",
+            "Derecho laboral.",
+            "Derecho penal.",
+          ],
+        },
+        {
+          titulo: "Formación académica",
+          items: [
+            "Licenciatura en Derecho por la Facultad de Derecho y Ciencias Sociales de la Universidad Michoacana de San Nicolás de Hidalgo, 2007-2012.",
+            "Titulada, con cédula profesional.",
+          ],
+        },
+        {
+          titulo: "Trayectoria",
+          items: [
+            "Abogada litigante en despacho jurídico, desde abril de 2025.",
+            "Representante sindical del Sindicato de Trabajadores de la Industria de la Radiodifusión, Televisión y Telecomunicaciones, 2014-2023, mediando conflictos laborales entre empleador y trabajadores.",
+            "Auditora de campo en la empresa Nielsen, 2012-2013.",
+          ],
+        },
+        {
+          titulo: "En qué trabaja",
+          items: [
+            "Asesoría jurídica adaptada a cada asunto en particular.",
+            "Elaboración de escritos y promociones.",
+            "Gestoría ante dependencias.",
+            "Consulta de autos en línea y seguimiento de acuerdos.",
+            "Cumplimiento en término de acuerdos y contratos legales.",
+          ],
+        },
       ],
       correo: "",
       pendiente: false,
@@ -80,11 +182,12 @@ const EQUIPO = {
       area: "CAE · Centro de Aprendizaje Efectivo",
       foto: DIRECTOR.foto,
       cedula: DIRECTOR.cedula,
-      formacion: DIRECTOR.formacion,
+      formacion: "",
       perfil: [
         "Coordina el Centro de Aprendizaje Efectivo: diseña los programas de los cursos y diplomados e imparte buena parte de las sesiones.",
-        "Doctor en Educación y maestro en Educación, con trayectoria docente en la Universidad Interamericana para el Desarrollo y en el ICESM, y como formador de agentes del Ministerio Público y de la Policía Ministerial.",
+        "Doctor y maestro en Educación, combina la docencia universitaria con el litigio diario, que es lo que da a los cursos su carácter práctico.",
       ],
+      secciones: [FORMACION_DIRECTOR, DOCENCIA_DIRECTOR, FORMACION_SERVIDORES],
       correo: "",
       pendiente: false,
     },
@@ -98,11 +201,46 @@ const EQUIPO = {
       area: "Administrativo, fiscal y cobro coactivo",
       foto: "assets/img/equipo/guillermo-valdes-gonzalez.jpg",
       cedula: "",
-      formacion:
-        "Licenciado en Derecho por la Universidad Interamericana para el Desarrollo.",
+      formacion: "",
       perfil: [
         "Especialista en derecho administrativo y fiscal, con dos décadas de experiencia dentro de la administración pública municipal de Morelia.",
-        "Ha trabajado en procedimientos administrativos de ejecución, notificación de créditos fiscales, impuesto predial, prescripciones y exenciones de adeudos, y cumplimiento de actos derivados de oficio o de sentencia.",
+        "Conoce el procedimiento administrativo desde el lado de la autoridad, lo que le permite anticipar cómo se defiende un asunto frente a ella.",
+      ],
+      secciones: [
+        {
+          titulo: "Áreas de práctica",
+          items: [
+            "Derecho administrativo.",
+            "Derecho fiscal.",
+            "Procedimientos administrativos de ejecución.",
+            "Cobro coactivo.",
+          ],
+        },
+        {
+          titulo: "Formación académica",
+          items: [
+            "Licenciatura en Derecho por la Universidad Interamericana para el Desarrollo, 2018.",
+            "Inglés de nivel intermedio.",
+          ],
+        },
+        {
+          titulo: "Trayectoria",
+          items: [
+            "Notificador ejecutor de cobro coactivo en el Ayuntamiento de Morelia, desde 2025.",
+            "Auxiliar del Departamento de Impuestos Inmobiliarios del Ayuntamiento de Morelia, 2016-2024.",
+            "Interventor del área de espectáculos públicos del Ayuntamiento de Morelia, 2004-2023.",
+          ],
+        },
+        {
+          titulo: "En qué trabaja",
+          items: [
+            "Notificación de créditos fiscales y actos administrativos.",
+            "Acuerdos de nulidad y resoluciones en materia de impuesto predial.",
+            "Tramitación de prescripciones y exenciones de adeudos.",
+            "Cumplimiento de actos derivados de oficio o de sentencia.",
+            "Atención y orientación a contribuyentes.",
+          ],
+        },
       ],
       correo: "",
       pendiente: false,
@@ -113,11 +251,43 @@ const EQUIPO = {
       area: "Civil, familiar y litigio oral",
       foto: "assets/img/equipo/arely-castaneda-zaranda.jpg",
       cedula: "",
-      formacion:
-        "Licenciatura en Derecho por la Facultad de Derecho y Ciencias Sociales de la Universidad Michoacana de San Nicolás de Hidalgo. Carta de pasante.",
+      formacion: "",
       perfil: [
-        "Redacta escritos iniciales, demandas, promociones y recursos en materia civil y familiar, y da seguimiento a acuerdos y expedientes en juzgados locales y plataformas electrónicas.",
-        "Atiende de forma directa a los clientes del despacho y los acompaña en el seguimiento de sus juicios. Cuenta con formación en el nuevo marco procesal de justicia oral.",
+        "Lleva la redacción de instrumentos jurídicos y el seguimiento de expedientes en materia civil y familiar, con formación en el nuevo marco procesal de justicia oral.",
+        "Es quien atiende de forma directa a buena parte de los clientes del despacho y los acompaña durante el juicio.",
+      ],
+      secciones: [
+        {
+          titulo: "Áreas de práctica",
+          items: [
+            "Derecho civil.",
+            "Derecho familiar.",
+            "Litigio oral.",
+            "Derecho procesal.",
+          ],
+        },
+        {
+          titulo: "Formación académica",
+          items: [
+            "Licenciatura en Derecho por la Facultad de Derecho y Ciencias Sociales de la Universidad Michoacana de San Nicolás de Hidalgo.",
+            "Carta de pasante.",
+          ],
+        },
+        {
+          titulo: "Actualización",
+          items: [
+            "Curso «Modelos de justicia oral: hacia una recepción armónica del Código Nacional de Procedimientos Civiles y Familiares», mayo de 2026, impartido por la Escuela Nacional de Formación Judicial extensión Morelia, la Escuela Estatal de Formación Judicial, la Universidad La Salle Morelia y el Colectivo Michoacano de Derecho.",
+          ],
+        },
+        {
+          titulo: "En qué trabaja",
+          items: [
+            "Escritos iniciales, demandas, promociones y recursos en materia civil y familiar.",
+            "Consulta y seguimiento de acuerdos y expedientes en juzgados locales y plataformas electrónicas.",
+            "Trámites judiciales y administrativos ante diversas instancias e instituciones públicas.",
+            "Atención directa y asesoría preliminar a clientes.",
+          ],
+        },
       ],
       correo: "",
       pendiente: false,
@@ -128,11 +298,35 @@ const EQUIPO = {
       area: "Gestoría y control de expedientes",
       foto: "assets/img/equipo/maria-del-carmen-lopez-rocha.jpg",
       cedula: "",
-      formacion:
-        "Estudiante de la Licenciatura en Derecho y Ciencias Sociales en la Universidad Michoacana de San Nicolás de Hidalgo.",
+      formacion: "",
       perfil: [
-        "Se encarga de la organización y el control de expedientes, la revisión de listas de acuerdos y la gestión ante juzgados y dependencias públicas.",
-        "Tiene experiencia previa en la elaboración de promociones, convenios y cartas finiquito, y en el seguimiento de juicios ejecutivos mercantiles.",
+        "Mantiene en orden los expedientes del despacho y da seguimiento a plazos, listas de acuerdos y trámites ante juzgados y dependencias.",
+        "Estudia la licenciatura en Derecho y llegó al despacho con dos años de experiencia previa como asistente jurídica.",
+      ],
+      secciones: [
+        {
+          titulo: "Formación académica",
+          items: [
+            "Estudiante de la Licenciatura en Derecho y Ciencias Sociales en la Universidad Michoacana de San Nicolás de Hidalgo, desde 2025.",
+          ],
+        },
+        {
+          titulo: "Trayectoria",
+          items: [
+            "Asistente jurídica en Despacho Rodríguez y Abogados, 2023-2025.",
+          ],
+        },
+        {
+          titulo: "En qué trabaja",
+          items: [
+            "Organización y control de expedientes.",
+            "Revisión de listas de acuerdos.",
+            "Elaboración de demandas y promociones.",
+            "Gestión ante juzgados y dependencias públicas.",
+            "Elaboración de convenios y cartas finiquito.",
+            "Seguimiento de juicios ejecutivos mercantiles, pagos y plazos.",
+          ],
+        },
       ],
       correo: "",
       pendiente: false,
@@ -143,11 +337,32 @@ const EQUIPO = {
       area: "Contabilidad y archivo",
       foto: "assets/img/equipo/jose-alberto-antonio-cabrera.jpg",
       cedula: "",
-      formacion:
-        "Estudiante de la Universidad Michoacana de San Nicolás de Hidalgo.",
+      formacion: "",
       perfil: [
-        "Apoya en la contabilidad del despacho, el registro de pólizas y el resguardo y la organización de la documentación.",
-        "Cuenta con experiencia previa como auxiliar contable en la Secretaría de Finanzas y Administración del Estado de Michoacán.",
+        "Se encarga de la contabilidad del despacho y del resguardo documental, con experiencia previa en la administración pública estatal.",
+      ],
+      secciones: [
+        {
+          titulo: "Formación académica",
+          items: [
+            "Estudiante de la Universidad Michoacana de San Nicolás de Hidalgo, desde 2024.",
+          ],
+        },
+        {
+          titulo: "Trayectoria",
+          items: [
+            "Auxiliar en contabilidad en la Secretaría de Finanzas y Administración del Estado de Michoacán, 2024-2026.",
+          ],
+        },
+        {
+          titulo: "En qué trabaja",
+          items: [
+            "Elaboración y registro de pólizas contables.",
+            "Organización y resguardo de información en archivo.",
+            "Control y verificación documental.",
+            "Gestión y entrega de documentación.",
+          ],
+        },
       ],
       correo: "",
       pendiente: false,
@@ -296,6 +511,37 @@ const EQUIPO = {
     prepararModal(personas);
   }
 
+  /** Construye las secciones desplegables del perfil. */
+  function dibujarSecciones(modal, persona) {
+    const contenedor = modal.querySelector("[data-modal-secciones]");
+    contenedor.innerHTML = "";
+
+    const secciones = persona.secciones || [];
+    secciones.forEach((seccion, posicion) => {
+      const id = `seccionPerfil${posicion}`;
+      const item = document.createElement("div");
+      item.className = "accordion-item";
+      item.innerHTML = `
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#${id}"
+                  aria-expanded="false" aria-controls="${id}">
+            ${escapar(seccion.titulo)}
+          </button>
+        </h3>
+        <div id="${id}" class="accordion-collapse collapse"
+             data-bs-parent="#perfilSecciones">
+          <div class="accordion-body">
+            <ul class="lista-marcada mb-0">
+              ${seccion.items.map((texto) => `<li>${escapar(texto)}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+      `;
+      contenedor.appendChild(item);
+    });
+  }
+
   /** Llena el modal con los datos de la persona cuya tarjeta se pulso. */
   function prepararModal(personas) {
     const modal = document.getElementById("modalPerfil");
@@ -329,6 +575,8 @@ const EQUIPO = {
         perfil.appendChild(p);
       });
 
+      dibujarSecciones(modal, persona);
+
       const correo = modal.querySelector("[data-modal-correo]");
       if (persona.correo) {
         correo.href = `mailto:${persona.correo}`;
@@ -337,6 +585,9 @@ const EQUIPO = {
       } else {
         correo.hidden = true;
       }
+
+      // Cada perfil arranca desde arriba, aunque el anterior quedara scrolleado.
+      modal.querySelector(".modal-body").scrollTop = 0;
     });
   }
 
