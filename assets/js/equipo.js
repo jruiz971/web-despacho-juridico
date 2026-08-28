@@ -368,6 +368,99 @@ const EQUIPO = {
       pendiente: false,
     },
     {
+      // TODO: falta el retrato. Guardarlo en la carpeta del personal como
+      // "Rocio Isabel Rojas Correa" y volver a correr el procesado de fotos.
+      nombre: "Rocío Isabel Rojas Correa",
+      cargo: "Asociada en criminología",
+      area: "Criminología y sistema penitenciario",
+      foto: "",
+      cedula: "",
+      formacion: "",
+      perfil: [
+        "Criminóloga con cinco años en el área técnica del Centro Penitenciario Lic. David Franco Rodríguez, donde elaboró estudios criminológicos, análisis de riesgo y dictámenes.",
+        "Aporta al despacho el conocimiento del sistema penitenciario por dentro: cómo se clasifica a una persona privada de la libertad, qué pesa en un análisis de riesgo y cómo se sostiene un dictamen ante la autoridad.",
+      ],
+      secciones: [
+        {
+          titulo: "Áreas de práctica",
+          items: [
+            "Criminología aplicada.",
+            "Sistema penitenciario y ejecución penal.",
+            "Psicología penitenciaria.",
+            "Victimología.",
+          ],
+        },
+        {
+          titulo: "Formación académica",
+          items: [
+            "Licenciatura en Criminología por el Instituto de Ciencias y Estudios Superiores de Tamaulipas, 2016-2019.",
+            "Diplomado en Psicología Penitenciaria, 180 horas, 2020-2021, avalado por el Colegio de Profesiones de la Psicología del Estado de Michoacán, el Instituto de Estudios en Psicología Jurídica y la Facultad de Psicología de la Universidad Michoacana de San Nicolás de Hidalgo.",
+          ],
+        },
+        {
+          titulo: "Trayectoria",
+          items: [
+            "Departamento Técnico, área de Criminología, del Centro Penitenciario Lic. David Franco Rodríguez, 2019-2024.",
+            "Docente en la Universidad de Durango, campus Morelia, 2024-2025.",
+            "Servicio social y prácticas profesionales en la Procuraduría General de Justicia del Estado de Michoacán, 2017-2018.",
+          ],
+        },
+        {
+          titulo: "En qué trabaja",
+          items: [
+            "Estudios criminológicos y análisis de riesgo.",
+            "Elaboración de dictámenes.",
+            "Estadística de relevancia criminológica y planes de actividades.",
+            "Cadenas de custodia, embalaje y etiquetado de indicios.",
+            "Apoyo en levantamiento de cadáver.",
+          ],
+        },
+        {
+          titulo: "Ponencias impartidas",
+          items: [
+            "Conferencia «Tratamiento penitenciario con enfoque criminológico», Universidad Vizcaya de las Américas, noviembre de 2022.",
+            "Ponente en la mesa «Salud mental en las personas privadas de su libertad», primer Foro de Psicología Penitenciaria, julio de 2021.",
+          ],
+        },
+        {
+          titulo: "Actualización",
+          items: [
+            "Curso Especializado en Criminología y Victimología, 20 horas, Instituto Magno Americano, 2024.",
+            "Charla «La evaluación psicológica en casos de tortura», Colegio de Psicología Jurídica de Michoacán, 2025.",
+            "Curso «Guardianes para la prevención del suicidio», Secretaría de Salud, 11 horas, 2025.",
+            "Taller de Lenguaje de Señas Básico, Coordinación del Sistema Penitenciario, 2022.",
+            "Taller de audiencia de ejecución penal, 2020.",
+          ],
+        },
+      ],
+      correo: "",
+      pendiente: false,
+    },
+    {
+      // Se cuenta con la fotografia; falta el curriculum.
+      nombre: "Javier Concepción Allende",
+      cargo: "Asociado jurídico",
+      area: "Por definir",
+      foto: "assets/img/equipo/javier-concepcion-allende.jpg",
+      cedula: "",
+      formacion: "",
+      perfil: [],
+      correo: "",
+      pendiente: true,
+    },
+    {
+      // Faltan la fotografia y el curriculum.
+      nombre: "Pedro Jesús Rocha Argomedo",
+      cargo: "Asociado jurídico",
+      area: "Por definir",
+      foto: "",
+      cedula: "",
+      formacion: "",
+      perfil: [],
+      correo: "",
+      pendiente: true,
+    },
+    {
       // Se cuenta con la fotografia; falta el curriculum.
       nombre: "Isaías Benítez Jaramillo",
       cargo: "Asociado jurídico",
