@@ -368,28 +368,17 @@ const EQUIPO = {
       pendiente: false,
     },
     {
-      // TODO: falta el retrato. Guardarlo en la carpeta del personal como
-      // "Rocio Isabel Rojas Correa" y volver a correr el procesado de fotos.
       nombre: "Rocío Isabel Rojas Correa",
-      cargo: "Asociada en criminología",
-      area: "Criminología y sistema penitenciario",
-      foto: "",
+      cargo: "Ventas y atención a clientes",
+      area: "Primer contacto y seguimiento comercial",
+      foto: "assets/img/equipo/rocio-isabel-rojas-correa.jpg",
       cedula: "",
       formacion: "",
       perfil: [
-        "Criminóloga con cinco años en el área técnica del Centro Penitenciario Lic. David Franco Rodríguez, donde elaboró estudios criminológicos, análisis de riesgo y dictámenes.",
-        "Aporta al despacho el conocimiento del sistema penitenciario por dentro: cómo se clasifica a una persona privada de la libertad, qué pesa en un análisis de riesgo y cómo se sostiene un dictamen ante la autoridad.",
+        "Atiende a quien llega al despacho por primera vez y da seguimiento comercial a las consultas, con una década de experiencia previa en ventas y atención a clientes.",
+        "Es licenciada en Criminología y trabajó cinco años en el área técnica de un centro penitenciario, de modo que entiende de qué se le está hablando cuando alguien llega con un asunto penal.",
       ],
       secciones: [
-        {
-          titulo: "Áreas de práctica",
-          items: [
-            "Criminología aplicada.",
-            "Sistema penitenciario y ejecución penal.",
-            "Psicología penitenciaria.",
-            "Victimología.",
-          ],
-        },
         {
           titulo: "Formación académica",
           items: [
@@ -398,21 +387,19 @@ const EQUIPO = {
           ],
         },
         {
-          titulo: "Trayectoria",
+          titulo: "Trayectoria comercial",
           items: [
-            "Departamento Técnico, área de Criminología, del Centro Penitenciario Lic. David Franco Rodríguez, 2019-2024.",
-            "Docente en la Universidad de Durango, campus Morelia, 2024-2025.",
-            "Servicio social y prácticas profesionales en la Procuraduría General de Justicia del Estado de Michoacán, 2017-2018.",
+            "Vendedora y atención a clientes en Grupo Gayosso, 2017-2018.",
+            "Auxiliar administrativa y agente de ventas, 2016-2017.",
+            "Departamento de marketing en Súper Servicio Santa Teresita, 2017.",
           ],
         },
         {
-          titulo: "En qué trabaja",
+          titulo: "Trayectoria en criminología",
           items: [
-            "Estudios criminológicos y análisis de riesgo.",
-            "Elaboración de dictámenes.",
-            "Estadística de relevancia criminológica y planes de actividades.",
-            "Cadenas de custodia, embalaje y etiquetado de indicios.",
-            "Apoyo en levantamiento de cadáver.",
+            "Departamento Técnico, área de Criminología, del Centro Penitenciario Lic. David Franco Rodríguez, 2019-2024: estudios criminológicos, análisis de riesgo, dictámenes y estadística de relevancia criminológica.",
+            "Docente en la Universidad de Durango, campus Morelia, 2024-2025.",
+            "Servicio social y prácticas profesionales en la Procuraduría General de Justicia del Estado de Michoacán, 2017-2018.",
           ],
         },
         {
@@ -449,11 +436,11 @@ const EQUIPO = {
       pendiente: true,
     },
     {
-      // Faltan la fotografia y el curriculum.
+      // Se cuenta con la fotografia; falta el curriculum.
       nombre: "Pedro Jesús Rocha Argomedo",
       cargo: "Asociado jurídico",
       area: "Por definir",
-      foto: "",
+      foto: "assets/img/equipo/pedro-jesus-rocha-argomedo.jpg",
       cedula: "",
       formacion: "",
       perfil: [],
