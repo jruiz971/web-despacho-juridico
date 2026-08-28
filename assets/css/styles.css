@@ -119,12 +119,22 @@ textarea:focus-visible {
   color: rgba(255, 255, 255, 0.86);
 }
 
-.fondo-azul h1,
-.fondo-azul h2,
-.fondo-azul h3,
-.fondo-azul h4,
-.fondo-azul h5 {
+/* Los titulos heredan azul marino por defecto, que sobre los fondos oscuros
+   quedaria invisible. Aplica a los dos fondos oscuros del sitio. */
+.fondo-azul :is(h1, h2, h3, h4, h5),
+.fondo-degradado :is(h1, h2, h3, h4, h5) {
   color: var(--blanco);
+}
+
+/* ...salvo los que viven dentro de una tarjeta clara colocada sobre ese
+   fondo, donde el azul marino es justamente lo que se lee. */
+.fondo-azul
+  :is(.tarjeta, .hero-tarjeta, .tarjeta-curso, .formulario-contacto, .persona, .pasos-consulta)
+  :is(h1, h2, h3, h4, h5),
+.fondo-degradado
+  :is(.tarjeta, .hero-tarjeta, .tarjeta-curso, .formulario-contacto, .persona, .pasos-consulta)
+  :is(h1, h2, h3, h4, h5) {
+  color: var(--azul-800);
 }
 
 .fondo-degradado {
@@ -183,6 +193,17 @@ textarea:focus-visible {
 .fondo-azul .eyebrow,
 .fondo-degradado .eyebrow {
   color: var(--oro-400);
+}
+
+/* El dorado claro solo funciona sobre el fondo oscuro; dentro de una tarjeta
+   clara hay que volver al dorado oscuro para que se lea. */
+.fondo-azul
+  :is(.tarjeta, .hero-tarjeta, .tarjeta-curso, .formulario-contacto, .pasos-consulta)
+  .eyebrow,
+.fondo-degradado
+  :is(.tarjeta, .hero-tarjeta, .tarjeta-curso, .formulario-contacto, .pasos-consulta)
+  .eyebrow {
+  color: var(--oro-600);
 }
 
 .titulo-seccion {
