@@ -1,0 +1,7 @@
+# Contreras y Asociados — Despacho Jurídico
+# Todo el sitio es público y se puede indexar.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jruiz971.github.io/web-despacho-juridico/sitemap.xml
