@@ -425,18 +425,6 @@ const EQUIPO = {
     },
     {
       // Se cuenta con la fotografia; falta el curriculum.
-      nombre: "Javier Concepción Allende",
-      cargo: "Asociado jurídico",
-      area: "Por definir",
-      foto: "assets/img/equipo/javier-concepcion-allende.jpg",
-      cedula: "",
-      formacion: "",
-      perfil: [],
-      correo: "",
-      pendiente: true,
-    },
-    {
-      // Se cuenta con la fotografia; falta el curriculum.
       nombre: "Pedro Jesús Rocha Argomedo",
       cargo: "Asociado jurídico",
       area: "Por definir",
