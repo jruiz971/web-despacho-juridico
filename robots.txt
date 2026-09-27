@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jruiz971.github.io/web-despacho-juridico/sitemap.xml
+Sitemap: https://contrerasasociados.com.mx/sitemap.xml
